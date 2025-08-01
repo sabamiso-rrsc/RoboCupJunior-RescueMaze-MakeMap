@@ -61,7 +61,7 @@ The second line "0 0 0" represents the position of the starting tile, in the ord
 The rows below that are wall and tile data.  
 柱も位置合わせのために記録されています。  
 The pillars are also recorded as 0 for alignment purposes.  
-壁がある状態は1, ない状態は0として記録しています。
+壁がある状態は1, ない状態は0として記録しています。  
 The state where there is a wall is recorded as 1, and the state where there is no wall is recorded as 0.
 
 ### 色タイルと数字の対応テーブル / Color tile and number correspondence table

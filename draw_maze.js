@@ -207,6 +207,15 @@ function load(file_elm) {
             document.getElementById("maze_y").value = y;
             document.getElementById("maze_x").value = x;
 
+            // start_posの読み込み
+            const [spz, spy, spx] = lines[1].split(' ').map(Number);
+            if (
+                isNaN(spz) || isNaN(spy) || isNaN(spx) ||
+                spz < 0 || spy < 0 || spx < 0
+            ) throw new Error("スタート位置情報が不正です");
+            start_pos = [spz, spx, spy];
+
+
             // ここで配列を確保
             maze_wall_data = [...Array(z)].map(() =>
                 [...Array(x * 2 + 1)].map(() =>
@@ -214,7 +223,7 @@ function load(file_elm) {
                 )
             );
 
-            let idx = 1;
+            let idx = 2;
             for (let zi = 0; zi < z; zi++) {
                 for (let yi = 0; yi < y * 2 + 1; yi++) {
                     if (idx >= lines.length) throw new Error("データが不足しています(y)");

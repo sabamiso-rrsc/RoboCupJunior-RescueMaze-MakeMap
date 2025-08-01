@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>迷路作成</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>        
+        <span class="size_input">
+            <span>x : </span>
+            <label class="number-input">
+                <input type="number" id="maze_x" value=6 min=1>
+                <span class="spinner spinner-down">-</span>
+                <span class="spinner spinner-up">+</span>
+            </label>
+        </span>
+        <span class=size_input>
+            <span>y : </span>
+            <label class="number-input">
+                <input type="number" id="maze_y" value=4 min=1>
+                <span class="spinner spinner-down">-</span>
+                <span class="spinner spinner-up">+</span>
+            </label>
+        </span>
+        <span class="size_input">
+            <span>z : </span>
+            <label class="number-input">
+                <input type="number" id="maze_z" value=1 min=1>
+                <span class="spinner spinner-down">-</span>
+                <span class="spinner spinner-up">+</span>
+            </label>
+        </span>
+        <br><br><br>
+        
+        <!--
+        <span class="victem">
+            <input id="none-victem" type="radio" name="victem" value="none" hidden checked>
+            <label for="none-victem" class="radio-label" style="background-color: white;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="red-victem" type="radio" name="victem" value="red" hidden>
+            <label for="red-victem" class="radio-label" style="background-color: red;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="yellow-victem" type="radio" name="victem" value="yellow" hidden>
+            <label for="yellow-victem" class="radio-label" style="background-color: yellow;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="green-victem" type="radio" name="victem" value="green" hidden>
+            <label for="green-victem" class="radio-label" style="background-color: lawngreen;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="H-victem" type="radio" name="victem" value="red" hidden>
+            <label for="H-victem" class="str-radio-label" style="background-color: #ffffff;"><font size=20px>H</font></label>
+            <input id="S-victem" type="radio" name="victem" value="yellow" hidden>
+            <label for="S-victem" class="str-radio-label" style="background-color: #ffffff;"><font size=20px>S</font></label>
+            <input id="U-victem" type="radio" name="victem" value="green" hidden>
+            <label for="U-victem" class="str-radio-label" style="background-color: #ffffff;"><font size=20px>U</font></label
+        </span>
+        <br><br><br><br>
+        -->
+        <span class="tile">
+            
+            <input id="white-tile" type="radio" name="tile" value="none" hidden checked>
+            <label for="white-tile" class="radio-label" style="background-color: white;"><font size=20px>&nbsp;&nbsp;</font></label>
+            
+            <input id="up-stair" type="radio" name="tile" value="start" hidden>
+            <label for="up-stair" class="str-radio-label" style="background-color: #ffffff"><img src="up_arrow.png" height="40px" width="40px"></label>
+            <input id="left-stair" type="radio" name="tile" value="start" hidden>
+            <label for="left-stair" class="str-radio-label" style="background-color: #ffffff"><img src="left_arrow.png" height="40px" width="40px"></label>
+            <input id="down-stair" type="radio" name="tile" value="start" hidden>
+            <label for="down-stair" class="str-radio-label" style="background-color: #ffffff"><img src="down_arrow.png" height="40px" width="40px"></label>
+            <input id="right-stair" type="radio" name="tile" value="start" hidden>
+            <label for="right-stair" class="str-radio-label" style="background-color: #ffffff"><img src="right_arrow.png" height="40px" width="40px"></label>
+            
+            <input id="black-tile" type="radio" name="tile" value="black" hidden>
+            <label for="black-tile" class="radio-label" style="background-color: black;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="blue-tile" type="radio" name="tile" value="blue" hidden>
+            <label for="blue-tile" class="radio-label" style="background-color: lightblue;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="red-tile" type="radio" name="tile" value="red" hidden>
+            <label for="red-tile" class="radio-label" style="background-color: lightcoral;"><font size=20px>&nbsp;&nbsp;</font></label>
+            <input id="silver-tile" type="radio" name="tile" value="silver" hidden>
+            <label for="silver-tile" class="str-radio-label" style="background-color: #ffffff"><img src="silver_tile.png" height="40px" width="40px"></label>
+            <input id="start-tile" type="radio" name="tile" value="start" hidden>
+            <label for="start-tile" class="str-radio-label" style="background-color: #ddffdd"><font size=5px>start</font></label>
+        </span>
+        <br><br><br><br>
+        <canvas id="maze_canvas" width="64px" height="64px"></canvas>
+        
+        <br><br>
+        <a href="#" class="btn--orange" onclick="save()" id="save_btn" download="maze_data.txt">保存</a>
+        <input type="file" value="読み込み" class="btn--orange" id="load_file" onchange="load(this)">
+        
+        <script src="draw_maze.js"></script>
+    </body>
+</html>
